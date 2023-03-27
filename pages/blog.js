@@ -19,7 +19,7 @@ const Blog = (props) => {
             <Link legacyBehavior={true} href={`/blogpost/${blogData.name}`}>
               <a><h3>{blogData.title}</h3></a>
             </Link>
-            <p>{blogData.content.substr(0, 200)} ...<Link href={`/blogpost/${blogData.name}`}><b>Read More</b></Link></p>
+            <p>{blogData.metadesc.substr(0, 200)} ...<Link href={`/blogpost/${blogData.name}`}><b>Read More</b></Link></p>
           </div>
 
         ))}
