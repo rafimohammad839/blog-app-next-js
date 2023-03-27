@@ -1,6 +1,7 @@
 import styles from '@/styles/Blog.module.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import * as fs from 'fs';
 
 // Step 1: Collect all the files from blogdata directory
 // Step 2: Iterate through them & display the data
@@ -28,10 +29,16 @@ const Blog = (props) => {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 
-  const response = await fetch('http://localhost:3000/api/blogs');
-  const allBlogs = await response.json();
+  const allBlogs = [];
+
+  const fileNames = fs.readdirSync("blogdata/");
+  for (let i = 0; i < fileNames.length; i++) {
+    const file = fileNames[i];
+    const fileData = fs.readFileSync("blogdata/" + file, 'utf-8')
+    allBlogs.push(JSON.parse(fileData));
+  }
 
   return {
     props: {allBlogs}

@@ -1,12 +1,13 @@
 import { useRouter } from "next/router";
 import styles from '@/styles/BlogPost.module.css'
 import { useEffect, useState } from "react";
+import * as fs from 'fs';
 
 // Step 1: Fetch the file data corresponding to the slug
 // Step 2: Display the data
 
 const Slug = (props) => {
-  const [data, setData] = useState(props)
+  const [data, setData] = useState(props.blogData)
 
   return (
     <div className={styles.container}>
@@ -19,15 +20,25 @@ const Slug = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { slug: 'how-to-learn-javascript' } },
+      { params: { slug: 'how-to-learn-flask' } },
+      { params: { slug: 'how-to-learn-nextjs' } }
+    ],
+    fallback: true, 
+  }
+}
 
-  const { slug } = context.query;
+export async function getStaticProps(context) {
 
-  const response = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`);
-  const blogData = await response.json();
+  const { slug } = context.params;
+
+  const blogData = fs.readFileSync(`blogdata/${slug}.json`, 'utf-8'); 
 
   return {
-    props: blogData
+    props: { blogData: JSON.parse(blogData) }
   }
 }
  

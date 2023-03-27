@@ -1,5 +1,4 @@
 import styles from '@/styles/Home.module.css'
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -20,7 +19,7 @@ export default function Home() {
         <div className={styles.blogContainer}>
           <h1 className={styles.heading}><span>Hunting Coder</span></h1>
           <div className={styles.imgContainer}>
-            <Image className={styles.myImg} src="/home-img.avif" width={200} height={120} />
+            <img className={styles.myImg} src="/home-img.avif" width={200} height={120} alt="hunting coder" />
           </div>
 
           <p>A blog for hunting coders by a hunting coder</p>

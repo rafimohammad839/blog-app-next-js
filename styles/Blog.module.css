@@ -36,6 +36,10 @@
   font-family: 'Inter', sans-serif;
 }
 
+.blogItem:first-child {
+  margin-top: 2rem;
+}
+
 .blogItem h3 {
   font-size: 1.25rem;
 }
