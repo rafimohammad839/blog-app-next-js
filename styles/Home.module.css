@@ -13,7 +13,7 @@
 }
 
 .blogContainer > p {
-  margin-bottom: 4.5rem;
+  margin-bottom: 2.5rem;
   text-align: center;
   font-size: 1.125rem;
 }
@@ -22,12 +22,41 @@
   margin: 0;
   margin-bottom: .75rem;
   text-align: center;
-  font-size: 50px;
+  font-size: 0.925rem;
   font-family: 'Inter', sans-serif;
 }
 
+.btn {
+  width: 88px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: 0;
+  font-size: .75rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.popularBlogs {
+  max-width: 334px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popularBlogs h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 .blogItem {
-  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .blogItem p {
@@ -52,12 +81,14 @@
 }
 
 .imgContainer {
-  padding: 1.875rem 0.625rem;
+  padding: 1.875rem 1.625rem 0.875rem;
   margin: 0 auto;
   display: block;
   width: 213px;
 }
 
 .myImg {
-  border-radius: 0.625rem;
+  width: 150px;
+  border-radius: 50%;
+  height: 146px;
 }

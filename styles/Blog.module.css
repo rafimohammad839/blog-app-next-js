@@ -75,3 +75,47 @@
 .myImg {
   border-radius: 0.625rem;
 }
+
+.btn {
+  margin-top: 10px;
+  width: 88px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: 0;
+  font-size: .75rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+
+.circleSvg {
+  background: #fff;
+}
+.circleSvg circle {
+  stroke: red;
+  stroke-width: 4;
+  fill: transparent;
+  transform-origin: center;
+  stroke-dasharray: var(--circumference);
+  animation: spinner 2s ease-out infinite;
+}
+
+@keyframes spinner {
+  from {
+    stroke-dashoffset: var(--circumference);
+    stroke: red;
+    transform: rotateZ(0deg)
+  }
+  to {
+    stroke-dashoffset: calc(var(--circumference) * -1);
+    stroke: green;
+    transform: rotateZ(720deg)
+  }
+}

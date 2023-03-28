@@ -18,3 +18,13 @@ body {
 h1, h2, h3 {
   font-family: 'Inter', sans-serif;
 }
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
