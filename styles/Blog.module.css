@@ -119,3 +119,9 @@
     transform: rotateZ(720deg)
   }
 }
+
+@media (max-width: 600px) {
+  .blogContainer {
+    max-width: 90vw;
+  }
+}

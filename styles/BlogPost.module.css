@@ -9,3 +9,10 @@
 .description {
   color: #696969;
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
